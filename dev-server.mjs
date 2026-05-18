@@ -20,7 +20,11 @@ const types = {
 const server = createServer((request, response) => {
   const url = new URL(request.url || "/", `http://${request.headers.host}`);
   const pathname = decodeURIComponent(url.pathname === "/" ? "/index.html" : url.pathname);
-  const filePath = normalize(join(root, pathname));
+  let filePath = normalize(join(root, pathname));
+
+  if (!existsSync(filePath) && !extname(filePath)) {
+    filePath = `${filePath}.html`;
+  }
 
   if (!filePath.startsWith(root) || !existsSync(filePath) || !statSync(filePath).isFile()) {
     response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
@@ -36,5 +40,5 @@ const server = createServer((request, response) => {
 });
 
 server.listen(port, "0.0.0.0", () => {
-  console.log(`Y&G site running at http://127.0.0.1:${port}/index.html`);
+  console.log(`Y&G site running at http://127.0.0.1:${port}/`);
 });

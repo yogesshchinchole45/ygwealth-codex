@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/appointment", "destination": "/appointment.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/blog-detail", "destination": "/blog-detail.html" },
+    { "source": "/calculators", "destination": "/calculators.html" },
+    { "source": "/careers", "destination": "/careers.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/insurance", "destination": "/insurance.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/product-detail", "destination": "/product-detail.html" },
+    { "source": "/products", "destination": "/products.html" },
+    { "source": "/service-detail", "destination": "/service-detail.html" },
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/signup", "destination": "/signup.html" },
+    { "source": "/team", "destination": "/team.html" }
+  ]
+}

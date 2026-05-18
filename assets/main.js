@@ -308,6 +308,28 @@ function addBusinessSchema() {
   document.head.appendChild(script);
 }
 
+function cleanUrl(path) {
+  if (location.protocol === "file:") return path;
+  return path.replace(/\.html(?=($|[?#]))/, "");
+}
+
+function normalizeInternalLinks() {
+  if (location.protocol === "file:") return;
+  document.querySelectorAll('a[href$=".html"], a[href*=".html?"], a[href*=".html#"]').forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href && !href.startsWith("http") && !href.startsWith("mailto:") && !href.startsWith("tel:")) {
+      link.setAttribute("href", cleanUrl(href));
+    }
+  });
+}
+
+function hideHtmlExtension() {
+  if (!/^https?:$/.test(location.protocol)) return;
+  if (!location.pathname.endsWith(".html")) return;
+  const cleanPath = location.pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "");
+  history.replaceState(null, "", `${cleanPath}${location.search}${location.hash}`);
+}
+
 function simpleProductLine(item) {
   if (item.category === "protection") {
     return `${item.name} helps protect you from a large cost or loss. It can support your family, health, vehicle, or assets when an unexpected event happens.`;
@@ -1120,3 +1142,5 @@ initHeroSlider();
 renderCalculators();
 initForms();
 initCalendar();
+normalizeInternalLinks();
+hideHtmlExtension();
