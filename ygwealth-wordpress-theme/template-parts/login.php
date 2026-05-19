@@ -1,0 +1,11 @@
+﻿<main class="auth-page">
+      <form class="form-card auth-card" data-form="login">
+        <p class="eyebrow">Client access</p>
+        <h1>Login</h1>
+        <label>Email<input required type="email" name="email" autocomplete="email"></label>
+        <label>Password<input required type="password" name="password" autocomplete="current-password"></label>
+        <button class="btn btn--gold" type="submit">Login</button>
+        <p>New to Y&amp;G? <a href="signup.html">Create an account</a></p>
+        <p class="form-note" data-form-note></p>
+      </form>
+    </main>

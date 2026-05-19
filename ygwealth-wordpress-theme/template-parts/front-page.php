@@ -1,0 +1,185 @@
+﻿<main>
+      <section class="hero">
+        <div class="hero__slides" aria-hidden="true">
+          <div class="hero__slide is-active"></div>
+          <div class="hero__slide"></div>
+          <div class="hero__slide"></div>
+          <div class="hero__slide"></div>
+        </div>
+        <button class="hero-arrow hero-arrow--prev" type="button" data-hero-prev aria-label="Previous slide">â€¹</button>
+        <button class="hero-arrow hero-arrow--next" type="button" data-hero-next aria-label="Next slide">â€º</button>
+        <div class="hero__content">
+          <p class="eyebrow">Wealth management for modern India</p>
+          <h1 data-hero-title>Smart Financial Planning for a Secure Future</h1>
+          <p class="hero__subtext" data-hero-subtext>Investment, Protection, and Wealth Creation Solutions Tailored for You</p>
+          <div class="button-row">
+            <a class="btn btn--gold" href="appointment.html">Book Appointment</a>
+            <a class="btn btn--outline-light" href="products.html">Explore Products</a>
+          </div>
+          <div class="trust-strip" aria-label="Trust indicators">
+            <span data-trust-1>Goal-led advice</span>
+            <span data-trust-2>Transparent process</span>
+            <span data-trust-3>India-focused portfolios</span>
+          </div>
+          <div class="hero-controls" aria-label="Hero slider controls">
+            <button class="is-active" type="button" data-hero-control="0">01</button>
+            <button type="button" data-hero-control="1">02</button>
+            <button type="button" data-hero-control="2">03</button>
+            <button type="button" data-hero-control="3">04</button>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Financial planning dashboard preview">
+          <div class="metric-card metric-card--primary">
+            <span data-metric-label>Projected corpus</span>
+            <strong data-metric-value>â‚¹2.84 Cr</strong>
+            <small data-metric-note>Retirement goal on track</small>
+          </div>
+          <div class="allocation-panel">
+            <div class="allocation-panel__top">
+              <span data-allocation-label>Portfolio mix</span>
+              <strong data-allocation-title>Balanced Growth</strong>
+            </div>
+            <div class="donut" aria-hidden="true"></div>
+            <ul class="legend">
+              <li><span class="dot dot--blue"></span><span data-legend-1>Equity 52%</span></li>
+              <li><span class="dot dot--gold"></span><span data-legend-2>Debt 32%</span></li>
+              <li><span class="dot dot--green"></span><span data-legend-3>Protection 16%</span></li>
+            </ul>
+          </div>
+          <div class="chart-card">
+            <span data-chart-title>Monthly SIP progress</span>
+            <div class="bars" aria-hidden="true">
+              <i style="height:34%"></i><i style="height:48%"></i><i style="height:42%"></i><i style="height:64%"></i><i style="height:78%"></i><i style="height:88%"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <p class="eyebrow">What we help with</p>
+          <h2>Financial decisions made clearer</h2>
+        </div>
+        <div class="grid grid--3">
+          <a class="feature-card" href="products.html">
+            <span class="icon">â‚¹</span>
+            <h3>Investment Products</h3>
+            <p>Mutual funds, bonds, FDs, equities, NPS, PMS and AIF options for different risk profiles.</p>
+          </a>
+          <a class="feature-card" href="service-detail.html?service=financial-planning">
+            <span class="icon">â—Ž</span>
+            <h3>Financial Planning</h3>
+            <p>Cash flow, milestones, protection and investments organized into one actionable plan.</p>
+          </a>
+          <a class="feature-card" href="service-detail.html?service=retirement-planning">
+            <span class="icon">â—´</span>
+            <h3>Retirement Planning</h3>
+            <p>Estimate future expenses, bridge gaps and build income streams for later years.</p>
+          </a>
+          <a class="feature-card" href="service-detail.html?service=tax-planning">
+            <span class="icon">%</span>
+            <h3>Tax Saving Solutions</h3>
+            <p>Investment choices aligned with tax efficiency, goals and long-term suitability.</p>
+          </a>
+          <a class="feature-card" href="product-detail.html?product=life-insurance">
+            <span class="icon">â—†</span>
+            <h3>Insurance &amp; Protection</h3>
+            <p>Life, health and general insurance guidance designed around family risk needs.</p>
+          </a>
+          <a class="feature-card" href="service-detail.html?service=wealth-management">
+            <span class="icon">â–£</span>
+            <h3>Wealth Advisory</h3>
+            <p>Premium portfolio guidance for business owners, HNIs and multi-goal households.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="split-section">
+        <div>
+          <p class="eyebrow">About Y&amp;G</p>
+          <h2>Advice built on clarity, discipline and long-term relationships.</h2>
+          <p>Y&amp;G Financial Services Private Limited helps Indian investors make informed choices across investments, protection, retirement, tax-saving and wealth creation. Our work starts with understanding your goals, then building a transparent path to reach them.</p>
+          <a class="text-link" href="about.html">Learn more about us</a>
+        </div>
+        <div class="why-list">
+          <div><strong>Trusted Advisors</strong><span>Practical guidance for every stage of wealth creation.</span></div>
+          <div><strong>Personalized Planning</strong><span>Recommendations mapped to goals, timelines and risk appetite.</span></div>
+          <div><strong>Transparent Approach</strong><span>Clear communication, documented assumptions and no jargon fog.</span></div>
+          <div><strong>Experienced Team</strong><span>Investment and planning experience across client segments.</span></div>
+        </div>
+      </section>
+
+      <section class="section section--tinted">
+        <div class="section__head">
+          <p class="eyebrow">Products</p>
+          <h2>Curated choices across risk, return and protection</h2>
+        </div>
+        <div class="pill-grid">
+          <a href="product-detail.html?product=mutual-funds">Mutual Funds</a>
+          <a href="product-detail.html?product=fixed-deposits">Fixed Deposits</a>
+          <a href="product-detail.html?product=bonds">Bonds</a>
+          <a href="product-detail.html?product=health-insurance">Health Insurance</a>
+          <a href="product-detail.html?product=life-insurance">Life Insurance</a>
+          <a href="product-detail.html?product=vehicle-insurance">Vehicle Insurance</a>
+          <a href="product-detail.html?product=pms">PMS</a>
+          <a href="product-detail.html?product=aif">AIF</a>
+          <a href="product-detail.html?product=sif">SIF</a>
+          <a href="product-detail.html?product=p2p">P2P</a>
+          <a href="product-detail.html?product=equity">Equity Investments</a>
+          <a href="product-detail.html?product=nps">NPS</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <p class="eyebrow">Services</p>
+          <h2>Guidance that turns intent into action</h2>
+        </div>
+        <div class="grid grid--3 compact">
+          <a class="service-tile" href="service-detail.html?service=financial-planning">Financial Planning</a>
+          <a class="service-tile" href="service-detail.html?service=investment-advisory">Investment Advisory</a>
+          <a class="service-tile" href="service-detail.html?service=retirement-planning">Retirement Planning</a>
+          <a class="service-tile" href="service-detail.html?service=goal-based-planning">Goal-based Planning</a>
+          <a class="service-tile" href="service-detail.html?service=wealth-management">Wealth Management</a>
+          <a class="service-tile" href="service-detail.html?service=financial-coaching">Financial Coaching</a>
+        </div>
+      </section>
+
+      <section class="section section--tinted">
+        <div class="section__head section__head--row">
+          <div>
+            <p class="eyebrow">Calculators</p>
+            <h2>Plan with numbers before you invest</h2>
+          </div>
+          <a class="btn btn--blue" href="calculators.html">Open Calculators</a>
+        </div>
+        <div class="grid grid--5">
+          <a class="mini-card" href="calculators.html#sip">SIP Calculator</a>
+          <a class="mini-card" href="calculators.html#lumpsum">Lump Sum Calculator</a>
+          <a class="mini-card" href="calculators.html#retirement">Retirement Calculator</a>
+          <a class="mini-card" href="calculators.html#future-value">Future Value Calculator</a>
+          <a class="mini-card" href="calculators.html#goal-sip">Goal Planning Calculator</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <p class="eyebrow">Client voices</p>
+          <h2>Built for trust, explained with patience</h2>
+        </div>
+        <div class="grid grid--3">
+          <blockquote class="quote-card">â€œThe review helped us connect insurance, SIPs and retirement goals in one place.â€<cite>Priya M., Bengaluru</cite></blockquote>
+          <blockquote class="quote-card">â€œClear explanations and practical allocation ideas for my business surplus.â€<cite>Rohan S., Pune</cite></blockquote>
+          <blockquote class="quote-card">â€œA disciplined, transparent process that made planning less overwhelming.â€<cite>Anil K., Delhi NCR</cite></blockquote>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <div>
+          <p class="eyebrow">Personal consultation</p>
+          <h2>Talk to a Financial Expert Today</h2>
+          <p>Book a focused discussion on your goals, existing portfolio and next best steps.</p>
+        </div>
+        <a class="btn btn--gold" href="appointment.html">Book Appointment</a>
+      </section>
+    </main>

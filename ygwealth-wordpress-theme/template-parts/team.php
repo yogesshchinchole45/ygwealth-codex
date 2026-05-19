@@ -1,0 +1,47 @@
+﻿<main>
+      <section class="page-hero">
+        <p class="eyebrow">Our team</p>
+        <h1>Experienced advisors with a planning-first mindset.</h1>
+        <p>Profiles below are placeholders ready to be replaced with real leadership photos, bios and credentials.</p>
+      </section>
+      <section class="section">
+        <div class="grid grid--3">
+          <article class="person-card">
+            <div class="avatar">YG</div>
+            <h3>Founder &amp; Managing Director</h3>
+            <p>Specializes in strategic wealth planning, client relationships and investment product governance.</p>
+            <span>Wealth Strategy</span>
+          </article>
+          <article class="person-card">
+            <div class="avatar">AR</div>
+            <h3>Head of Investment Advisory</h3>
+            <p>Focuses on portfolio allocation, mutual funds, bonds, PMS/AIF suitability and reviews.</p>
+            <span>Investments</span>
+          </article>
+          <article class="person-card">
+            <div class="avatar">NS</div>
+            <h3>Senior Financial Planner</h3>
+            <p>Works with families on goal planning, insurance adequacy, retirement and cash-flow decisions.</p>
+            <span>Planning</span>
+          </article>
+          <article class="person-card">
+            <div class="avatar">KM</div>
+            <h3>Insurance Specialist</h3>
+            <p>Supports clients with life, health and general insurance need analysis and policy comparison.</p>
+            <span>Protection</span>
+          </article>
+          <article class="person-card">
+            <div class="avatar">PV</div>
+            <h3>Client Success Manager</h3>
+            <p>Coordinates onboarding, documentation, service requests and periodic review meetings.</p>
+            <span>Service</span>
+          </article>
+          <article class="person-card">
+            <div class="avatar">ST</div>
+            <h3>Research Associate</h3>
+            <p>Tracks market updates, product notes and educational material for client conversations.</p>
+            <span>Research</span>
+          </article>
+        </div>
+      </section>
+    </main>
