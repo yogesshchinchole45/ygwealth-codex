@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="90" viewBox="0 0 220 90" role="img" aria-label="MFU">
+  <rect width="220" height="90" rx="10" fill="#ffffff"/>
+  <path d="M22 62c16-34 35-34 51 0 18-34 35-34 53 0" fill="none" stroke="#0b77bd" stroke-width="8" stroke-linecap="round"/>
+  <text x="138" y="42" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#0b77bd">MFU</text>
+  <text x="139" y="63" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#5d6670">Mutual Fund Utility</text>
+</svg>

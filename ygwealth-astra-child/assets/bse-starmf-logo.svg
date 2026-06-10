@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="90" viewBox="0 0 220 90" role="img" aria-label="BSE StAR MF">
+  <rect width="220" height="90" rx="10" fill="#ffffff"/>
+  <circle cx="44" cy="45" r="27" fill="#f26b21"/>
+  <text x="26" y="54" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#ffffff">BSE</text>
+  <text x="88" y="40" font-family="Arial, sans-serif" font-size="26" font-weight="800" fill="#174a83">StAR</text>
+  <text x="89" y="63" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#e93223">MF</text>
+</svg>

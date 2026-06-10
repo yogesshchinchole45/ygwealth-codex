@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="90" viewBox="0 0 220 90" role="img" aria-label="AMFI">
+  <rect width="220" height="90" rx="10" fill="#ffffff"/>
+  <path d="M18 60 44 25l20 25 19-18 25 28" fill="none" stroke="#1f9b68" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="118" y="43" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#1769aa">AMFI</text>
+  <text x="118" y="64" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#4c5b66">Mutual Fund Distributor</text>
+</svg>
