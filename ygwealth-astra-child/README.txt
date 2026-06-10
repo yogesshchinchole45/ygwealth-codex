@@ -43,3 +43,16 @@ Recommended plugins:
 Important:
 The first FormSubmit submission may require email verification from info@ygwealth.in.
 Open that email and confirm before relying on live enquiries.
+
+If layout looks broken after upload:
+1. Upload the latest ZIP again from Appearance > Themes > Add New > Upload Theme.
+2. Activate another theme temporarily, then activate "Y&G Wealth Astra Child" again.
+   This runs the menu/layout migration.
+3. Go to Settings > Permalinks and click Save Changes.
+4. Clear LiteSpeed/Hostinger cache and browser cache.
+
+Version 1.0.1 fixes:
+- Forces the correct Y&G menu into Astra header locations.
+- Hides Astra's default page title above the Gutenberg hero.
+- Makes imported Gutenberg sections full-width.
+- Adds a Y&G footer and hides Astra's default powered-by footer.

@@ -14,6 +14,33 @@ body {
   color: var(--yg-ink);
 }
 
+.ast-plain-container.ast-no-sidebar #primary,
+.ast-plain-container.ast-no-sidebar .site-content .ast-container {
+  max-width: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.ast-article-single {
+  padding: 0 !important;
+}
+
+.entry-header,
+.ast-single-post .entry-header {
+  display: none !important;
+}
+
+.entry-content,
+.entry-content[data-ast-blocks-layout] {
+  max-width: none;
+  width: 100%;
+}
+
+.entry-content > .wp-block-group {
+  margin-top: 0;
+}
+
 .yg-hero {
   padding: 88px 28px;
   background:
@@ -31,6 +58,26 @@ body {
   margin: 0 auto;
 }
 
+.entry-content > .yg-hero,
+.entry-content > .yg-section,
+.entry-content > .yg-cta {
+  max-width: none;
+  width: 100%;
+}
+
+.entry-content > .yg-section > *,
+.entry-content > .yg-cta > * {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.entry-content > .yg-hero > * {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .yg-hero h1 {
   max-width: 760px;
   margin-bottom: 18px;
@@ -41,6 +88,11 @@ body {
 .yg-hero p {
   max-width: 720px;
   font-size: 18px;
+}
+
+.yg-hero .wp-block-buttons {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .yg-section {
@@ -193,6 +245,55 @@ body {
   background: #fff;
 }
 
+.site-below-footer-wrap {
+  display: none !important;
+}
+
+.yg-site-footer {
+  padding: 52px 28px 24px;
+  background: #241f21;
+  color: #fff;
+}
+
+.yg-site-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.yg-site-footer__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 30px;
+}
+
+.yg-site-footer img {
+  max-width: 130px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.yg-site-footer p,
+.yg-site-footer li {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.yg-site-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.yg-site-footer__bottom {
+  max-width: 1180px;
+  margin: 28px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.68);
+}
+
 @media (max-width: 782px) {
   .yg-section,
   .yg-hero {
@@ -202,6 +303,10 @@ body {
 
   .yg-calculator-grid,
   .yg-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yg-site-footer__inner {
     grid-template-columns: 1fr;
   }
 }

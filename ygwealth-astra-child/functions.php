@@ -9,6 +9,15 @@ if (!defined('ABSPATH')) {
 
 define('YGWEALTH_EMAIL', 'info@ygwealth.in');
 define('YGWEALTH_PORTFOLIO_URL', 'https://myportfolio.ygfinserv.in/');
+define('YGWEALTH_ASTRA_VERSION', '1.0.1');
+
+function ygwealth_register_menus() {
+    register_nav_menus([
+        'primary' => __('Y&G Primary Menu', 'ygwealth-astra'),
+        'ast-hf-menu-1' => __('Y&G Astra Header Menu', 'ygwealth-astra'),
+    ]);
+}
+add_action('after_setup_theme', 'ygwealth_register_menus', 20);
 
 function ygwealth_astra_assets() {
     $version = wp_get_theme()->get('Version');
@@ -17,6 +26,73 @@ function ygwealth_astra_assets() {
     wp_enqueue_script('ygwealth-astra-script', get_stylesheet_directory_uri() . '/assets/yg-astra.js', [], $version, true);
 }
 add_action('wp_enqueue_scripts', 'ygwealth_astra_assets', 20);
+
+function ygwealth_disable_astra_titles($enabled) {
+    return false;
+}
+add_filter('astra_the_title_enabled', 'ygwealth_disable_astra_titles');
+
+function ygwealth_force_full_width_layout($layout) {
+    return 'no-sidebar';
+}
+add_filter('astra_page_layout', 'ygwealth_force_full_width_layout');
+
+function ygwealth_force_content_layout($layout) {
+    return 'plain-container';
+}
+add_filter('astra_get_content_layout', 'ygwealth_force_content_layout');
+
+function ygwealth_run_update_migrations() {
+    if (get_option('ygwealth_astra_child_version') === YGWEALTH_ASTRA_VERSION) {
+        return;
+    }
+    ygwealth_create_menus();
+    update_option('ygwealth_astra_child_version', YGWEALTH_ASTRA_VERSION);
+}
+add_action('init', 'ygwealth_run_update_migrations', 30);
+
+function ygwealth_custom_footer() {
+    $logo = esc_url(get_stylesheet_directory_uri() . '/assets/yg-logo.png');
+    ?>
+    <section class="yg-site-footer">
+      <div class="yg-site-footer__inner">
+        <div>
+          <img src="<?php echo $logo; ?>" alt="Y&G Financial Services">
+          <h3>Y&amp;G Financial Services Private Limited</h3>
+          <p>An AMFI Registered Mutual Fund Distributor (ARN-134795).</p>
+          <p>Mahalunge, Pune, Maharashtra, India 411045.<br>
+          Phone: <a href="tel:+919139110009">+91 9139110009</a><br>
+          Email: <a href="mailto:info@ygwealth.in">info@ygwealth.in</a></p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About Us</a></li>
+            <li><a href="<?php echo esc_url(home_url('/products/')); ?>">Products</a></li>
+            <li><a href="<?php echo esc_url(home_url('/services/')); ?>">Services</a></li>
+            <li><a href="<?php echo esc_url(home_url('/calculators/')); ?>">Calculators</a></li>
+            <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://facebook.com/ygwealth" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://instagram.com/ygwealth" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://x.com/ygfincon" target="_blank" rel="noopener">X / Twitter</a></li>
+            <li><a href="https://linkedin.com/ygwealth" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://wa.me/919139110009" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="yg-site-footer__bottom">
+        <p><strong>Disclaimer:</strong> The information on this website is for education and awareness only. Market-linked investments are subject to market risks. Please read all scheme, policy and offer documents carefully before investing.</p>
+        <p>&copy; <?php echo esc_html(date('Y')); ?> Y&amp;G Financial Services Private Limited. All rights reserved.</p>
+      </div>
+    </section>
+    <?php
+}
+add_action('astra_footer_before', 'ygwealth_custom_footer');
 
 function ygwealth_shortcode_calculators() {
     return '<div data-yg-calculators></div>';
@@ -290,6 +366,8 @@ function ygwealth_create_menus() {
 
     $locations = get_theme_mod('nav_menu_locations', []);
     $locations['primary'] = $menu_id;
+    $locations['ast-hf-menu-1'] = $menu_id;
+    $locations['menu-1'] = $menu_id;
     set_theme_mod('nav_menu_locations', $locations);
 }
 
