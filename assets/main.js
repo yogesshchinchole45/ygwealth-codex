@@ -1089,7 +1089,7 @@ function initForms() {
       event.preventDefault();
       const note = form.querySelector("[data-form-note]");
       const formType = form.dataset.form;
-      const shouldEmail = formType === "contact" || formType === "appointment";
+      const shouldEmail = formType === "contact" || formType === "appointment" || formType === "signup";
 
       if (!shouldEmail) {
         if (note) note.textContent = "Thank you. Your details have been captured for follow-up.";
@@ -1098,7 +1098,12 @@ function initForms() {
       }
 
       const formData = new FormData(form);
-      formData.append("_subject", formType === "appointment" ? "New appointment booking from Y&G website" : "New contact enquiry from Y&G website");
+      const subjects = {
+        appointment: "New appointment booking from Y&G website",
+        contact: "New contact enquiry from Y&G website",
+        signup: "New sign up request from Y&G website"
+      };
+      formData.append("_subject", subjects[formType] || "New website enquiry from Y&G website");
       formData.append("_template", "table");
       formData.append("_captcha", "false");
       formData.append("source", location.href);

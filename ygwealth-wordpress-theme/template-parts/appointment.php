@@ -1,29 +1,13 @@
-﻿<main>
+<main>
       <section class="page-hero">
         <p class="eyebrow">Book appointment</p>
         <h1>Choose a convenient consultation slot.</h1>
-        <p>Select date, time and share your details. This frontend booking flow is ready for backend or calendar integration.</p>
+        <p>Select a suitable time for a discovery call with Y&amp;G Financial Services Private Limited.</p>
       </section>
-      <section class="appointment-grid">
-        <div class="calendar-card">
-          <div class="calendar-card__head">
-            <button class="icon-button" data-month-prev aria-label="Previous month">â€¹</button>
-            <h2 data-calendar-title></h2>
-            <button class="icon-button" data-month-next aria-label="Next month">â€º</button>
-          </div>
-          <div class="calendar-weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
-          <div class="calendar-days" data-calendar></div>
+      <section class="tidycal-section">
+        <div class="tidycal-card">
+          <div class="tidycal-embed" data-path="yandggroup/discovery-call-1jo7528"></div>
+          <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
         </div>
-        <form class="form-card" data-form="appointment" action="https://formsubmit.co/info@ygwealth.in" method="POST">
-          <h2>Consultation details</h2>
-          <label>Selected Date<input required readonly name="date" data-selected-date></label>
-          <label>Time Slot<select required name="time"><option>10:00 AM</option><option>12:00 PM</option><option>3:00 PM</option><option>5:00 PM</option></select></label>
-          <label>Name<input required name="name" autocomplete="name"></label>
-          <label>Email<input required type="email" name="email" autocomplete="email"></label>
-          <label>Phone<input required name="phone" autocomplete="tel"></label>
-          <label>Consultation Topic<select name="topic"><option>Investment Planning</option><option>Retirement Planning</option><option>Insurance Review</option><option>Tax Saving</option><option>Wealth Management</option></select></label>
-          <button class="btn btn--gold" type="submit">Confirm Appointment</button>
-          <p class="form-note" data-form-note></p>
-        </form>
       </section>
     </main>

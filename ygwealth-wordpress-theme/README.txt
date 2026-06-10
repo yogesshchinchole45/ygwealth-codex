@@ -22,3 +22,5 @@ Notes:
 - Contact and appointment forms are wired to email submissions for info@ygwealth.in
   through the included frontend form handler. A backend form plugin or CRM integration
   can be added later if deeper tracking is required.
+- Appointment booking uses the TidyCal embed for yandggroup/discovery-call-1jo7528.
+- The Sign Up form is also wired as a lead form and emails info@ygwealth.in.

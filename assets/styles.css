@@ -1006,6 +1006,25 @@ textarea {
   filter: saturate(0.9);
 }
 
+.tidycal-section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 24px 90px;
+}
+
+.tidycal-card {
+  min-height: 680px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.tidycal-card .tidycal-embed {
+  min-height: 640px;
+}
+
 .calendar-card {
   padding: 22px;
 }
