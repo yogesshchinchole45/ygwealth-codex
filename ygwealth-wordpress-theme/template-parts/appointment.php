@@ -14,7 +14,7 @@
           <div class="calendar-weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
           <div class="calendar-days" data-calendar></div>
         </div>
-        <form class="form-card" data-form="appointment">
+        <form class="form-card" data-form="appointment" action="https://formsubmit.co/info@ygwealth.in" method="POST">
           <h2>Consultation details</h2>
           <label>Selected Date<input required readonly name="date" data-selected-date></label>
           <label>Time Slot<select required name="time"><option>10:00 AM</option><option>12:00 PM</option><option>3:00 PM</option><option>5:00 PM</option></select></label>

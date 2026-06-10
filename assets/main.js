@@ -266,6 +266,8 @@ const formatDateLocal = (date) => {
 };
 
 const slugFromUrl = (fallback) => new URLSearchParams(location.search).get("product") || new URLSearchParams(location.search).get("service") || fallback;
+const leadEmail = "info@ygwealth.in";
+const emailFormEndpoint = `https://formsubmit.co/ajax/${leadEmail}`;
 
 function setMetaDescription(description) {
   let meta = document.querySelector('meta[name="description"]');
@@ -287,14 +289,16 @@ function addBusinessSchema() {
     "@type": "FinancialService",
     name: "Y&G Financial Services Private Limited",
     url: "https://www.ygfinserv.com",
-    email: "info@ygfinserv.com",
+    email: leadEmail,
     telephone: "+91 9139110009",
     areaServed: "India",
     address: {
       "@type": "PostalAddress",
       addressCountry: "IN",
       addressRegion: "Maharashtra",
-      addressLocality: "Mumbai"
+      addressLocality: "Pune",
+      streetAddress: "Mahalunge",
+      postalCode: "411045"
     },
     sameAs: [
       "https://facebook.com/ygwealth",
@@ -592,7 +596,7 @@ function renderFooter() {
           <h3>Y&G Financial Services Private Limited</h3>
           <p class="footer-registration">An AMFI Registered Mutual Fund Distributor (ARN-134795)</p>
           <p>Investment, protection and wealth creation guidance for Indian investors.</p>
-          <p><strong>Phone:</strong> <a href="tel:+919139110009">+91 9139110009</a><br><strong>Email:</strong> <a href="mailto:info@ygfinserv.com">info@ygfinserv.com</a><br><strong>Website:</strong> <a href="https://www.ygfinserv.com">www.ygfinserv.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+919139110009">+91 9139110009</a><br><strong>Email:</strong> <a href="mailto:${leadEmail}">${leadEmail}</a><br><strong>Website:</strong> <a href="https://www.ygfinserv.com">www.ygfinserv.com</a></p>
           <div class="membership-badges" aria-label="Membership details">
             <div class="membership-badge">
               <img class="membership-img" src="assets/amfi-logo.svg" alt="AMFI logo">
@@ -618,7 +622,7 @@ function renderFooter() {
             <a href="https://x.com/ygfincon" target="_blank" rel="noopener" aria-label="X"><img src="https://cdn.simpleicons.org/x/ffffff" alt=""></a>
             <a href="https://linkedin.com/ygwealth" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="https://cdn.simpleicons.org/linkedin/ffffff" alt=""></a>
             <a href="https://www.youtube.com/@ygfinancialservicepvtltd3553" target="_blank" rel="noopener" aria-label="YouTube"><img src="https://cdn.simpleicons.org/youtube/ffffff" alt=""></a>
-            <a href="mailto:info@ygfinserv.com" target="_blank" rel="noopener" aria-label="Email"><img src="https://cdn.simpleicons.org/gmail/ffffff" alt=""></a>
+            <a href="mailto:${leadEmail}" target="_blank" rel="noopener" aria-label="Email"><img src="https://cdn.simpleicons.org/gmail/ffffff" alt=""></a>
             <a href="https://www.ygfinserv.com" target="_blank" rel="noopener" aria-label="Website"><img src="https://cdn.simpleicons.org/googlechrome/ffffff" alt=""></a>
             <a href="https://wa.me/919139110009" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt=""></a>
           </div>
@@ -1081,11 +1085,44 @@ function renderCalculators() {
 
 function initForms() {
   document.querySelectorAll("[data-form]").forEach((form) => {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const note = form.querySelector("[data-form-note]");
-      if (note) note.textContent = "Thank you. Your details have been captured for follow-up.";
-      form.reset();
+      const formType = form.dataset.form;
+      const shouldEmail = formType === "contact" || formType === "appointment";
+
+      if (!shouldEmail) {
+        if (note) note.textContent = "Thank you. Your details have been captured for follow-up.";
+        form.reset();
+        return;
+      }
+
+      const formData = new FormData(form);
+      formData.append("_subject", formType === "appointment" ? "New appointment booking from Y&G website" : "New contact enquiry from Y&G website");
+      formData.append("_template", "table");
+      formData.append("_captcha", "false");
+      formData.append("source", location.href);
+
+      if (note) note.textContent = "Sending your details...";
+
+      try {
+        const response = await fetch(emailFormEndpoint, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: formData
+        });
+        if (!response.ok) throw new Error("Email service unavailable");
+        if (note) note.textContent = "Thank you. Your details have been emailed to our team.";
+        form.reset();
+      } catch (error) {
+        const subject = encodeURIComponent(formData.get("_subject"));
+        const body = encodeURIComponent(Array.from(formData.entries())
+          .filter(([key]) => !key.startsWith("_"))
+          .map(([key, value]) => `${key}: ${value}`)
+          .join("\n"));
+        window.location.href = `mailto:${leadEmail}?subject=${subject}&body=${body}`;
+        if (note) note.textContent = "Your email app has been opened with the enquiry details.";
+      }
     });
   });
 }

@@ -19,5 +19,6 @@ Notes:
   footer, logos, and lead forms from the static website.
 - Product detail, service detail, and blog detail pages use query parameters for the
   selected item, for example /product-detail/?product=mutual-funds.
-- Forms are frontend-only, matching the current static website. A backend form plugin
-  or CRM integration can be added later if required.
+- Contact and appointment forms are wired to email submissions for info@ygwealth.in
+  through the included frontend form handler. A backend form plugin or CRM integration
+  can be added later if deeper tracking is required.
