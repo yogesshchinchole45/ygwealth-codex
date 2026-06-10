@@ -1,11 +1,9 @@
-﻿<main class="auth-page">
-      <form class="form-card auth-card" data-form="login">
+<main class="auth-page">
+      <section class="form-card auth-card">
         <p class="eyebrow">Client access</p>
-        <h1>Login</h1>
-        <label>Email<input required type="email" name="email" autocomplete="email"></label>
-        <label>Password<input required type="password" name="password" autocomplete="current-password"></label>
-        <button class="btn btn--gold" type="submit">Login</button>
+        <h1>Portfolio Viewer</h1>
+        <p>View your investment portfolio through the secure Y&amp;G portfolio viewer.</p>
+        <a class="btn btn--gold" href="https://myportfolio.ygfinserv.in/" target="_blank" rel="noopener">Open Portfolio Viewer</a>
         <p>New to Y&amp;G? <a href="signup.html">Create an account</a></p>
-        <p class="form-note" data-form-note></p>
-      </form>
+      </section>
     </main>

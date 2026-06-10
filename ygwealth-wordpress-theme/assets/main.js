@@ -271,6 +271,7 @@ const wpRoutes = wpTheme.routes || {};
 const wpAssetBase = (wpTheme.assetBase || "assets").replace(/\/$/, "");
 const leadEmail = "info@ygwealth.in";
 const emailFormEndpoint = `https://formsubmit.co/ajax/${leadEmail}`;
+const portfolioUrl = "https://myportfolio.ygfinserv.in/";
 
 function assetUrl(file) {
   return `${wpAssetBase}/${file}`;
@@ -579,7 +580,7 @@ function renderHeader() {
         <a href="contact.html">Contact Us</a>
       </div>
       <div class="nav__actions">
-        <a class="btn btn--red" href="login.html">Login</a>
+        <a class="btn btn--red" href="${portfolioUrl}" target="_blank" rel="noopener">Login</a>
         <a class="btn btn--orange" href="signup.html">Sign Up</a>
         <a class="btn btn--gold" href="appointment.html">Book Appointment</a>
       </div>
